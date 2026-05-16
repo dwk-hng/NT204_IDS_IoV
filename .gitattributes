@@ -1,0 +1,31 @@
+# Default: dùng LF cho text files
+* text=auto eol=lf
+
+# Python
+*.py text eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+
+# YAML / config
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+
+# Windows scripts giữ CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files (không convert line ending)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.pdf  binary
+*.zip  binary
+*.pt   binary
+*.pth  binary
+*.onnx binary
+*.pkl  binary
