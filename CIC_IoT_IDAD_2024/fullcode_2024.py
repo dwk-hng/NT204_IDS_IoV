@@ -372,7 +372,7 @@ from typing import Any, cast
 
 # Đường dẫn gốc
 # base_dir = "/content/drive/MyDrive/[IDPS]-Dataste"
-# Nếu chạy trên máy tính cá nhân, bạn có thể đổi base_dir thành dạng thư mục hiện tại:
+# Nếu chạy trên máy tính cá nhân, có thể đổi base_dir thành dạng thư mục hiện tại:
 base_dir = r"C:\Users\chien\Documents\IDS_IPS\ĐA"
 csv_dir = os.path.join(base_dir, "CIC_2019")
 cic_ddos_out_dir = os.path.join(base_dir, "cic_2019_processed")
@@ -443,7 +443,7 @@ def stage0_preprocessing():
     df_list = []
     fraction = 0.1  # Lấy mẫu 10%
 
-    # Cập nhật nhãn hiếm dựa trên thư mục CIC_2019 của bạn
+    # Cập nhật nhãn hiếm 
     rare_classes = [
         "SQLINJECTION",  # 6,603 mẫu
         "BRUTEFORCE",  # 3,619 mẫu
@@ -455,7 +455,6 @@ def stage0_preprocessing():
 
     for f in all_files:
         print(f" 📂 Đang xử lý: {os.path.basename(f)}")
-        # Đọc theo chunk để bảo vệ RAM 32GB của bạn
         chunks = pd.read_csv(f, low_memory=False, chunksize=250000)
 
         for chunk in chunks:
@@ -476,7 +475,7 @@ def stage0_preprocessing():
 
         gc.collect()
 
-    # --- 3. LÀM SẠCH DỮ LIỆU (Giữ nguyên các "Bí kíp" quan trọng của bạn) ---
+    # --- 3. LÀM SẠCH DỮ LIỆU ---
     print("🧹 Đang làm sạch dữ liệu...")
     df_full = pd.concat(df_list, ignore_index=True)
     del df_list
@@ -673,7 +672,7 @@ def stage1_training():
     # Danh sách tên các model đã train trong biến `models`
     model_names = list(models.keys())
 
-    # 2. Tạo 4 biến path riêng biệt để bạn tự do tuỳ chỉnh đường dẫn
+    # 2. Tạo 4 biến path riêng biệt để tự do tuỳ chỉnh đường dẫn
     path_rf = os.path.join(
         cic_ddos_out_dir,
         "output_cic_ddos_2018",
@@ -707,7 +706,7 @@ def stage1_training():
         "CatBoost_GPU": path_cat,
     }
 
-    # 3. Tạo 4 biến output_folder theo đúng công thức của bạn
+    # 3. Tạo 4 biến output_folder
     output_folders = {
         name: f"{cic_ddos_out_dir}output_stage1_{name}/" for name in model_names
     }
@@ -1415,7 +1414,7 @@ def stage3_hyperopt():
     out_dir = base_dir_path / "output_stage3"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # Giả định bạn đã có best_rf từ Hyperopt. Nếu chưa, đây là ví dụ để code không báo lỗi:
+    # Giả định đã có best_rf từ Hyperopt. Nếu chưa, đây là ví dụ để code không báo lỗi:
     # best_rf = {'criterion': 0, 'max_depth': 30, 'max_features': 5, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
 
     best_criterion = "gini" if best_rf["criterion"] == 0 else "entropy"
@@ -1474,7 +1473,7 @@ def stage3_hyperopt():
 
     # # --- CHIẾN THUẬT TIẾT KIỆM THỜI GIAN ---
     # # Lấy mẫu 1,000,000 dòng ngẫu nhiên để tìm tham số (vẫn đủ lớn để đại diện)
-    # # Nếu bạn muốn chạy trên toàn bộ 25 triệu dòng, hãy comment 3 dòng dưới đây.
+    # # Nếu muốn chạy trên toàn bộ 25 triệu dòng, hãy comment 3 dòng dưới đây.
     sample_size = 1000000
     idx = np.random.choice(len(X_train_resampled), sample_size, replace=False)
     X_train_tuning = X_train_resampled.iloc[idx]
@@ -1533,7 +1532,7 @@ def stage3_hyperopt():
             fn=objective_xgb,
             space=space_xgb,
             algo=tpe.suggest,
-            max_evals=20,  # Bạn có thể tăng lên 50 nếu có thời gian
+            max_evals=20,  # có thể tăng lên 50 nếu có thời gian
             trials=trials_xgb,
         )
 
@@ -1769,7 +1768,6 @@ def stage3_hyperopt():
     joblib.dump(final_lgb, out_dir / "stage3_lgb_model.joblib")
     print("Đã lưu mô hình và báo cáo LightGBM thành công!")
 
-
 # ==============================================================================
 # STAGE 4: EXPLAINABLE AI (XAI)
 # ==============================================================================
@@ -1816,9 +1814,12 @@ def stage4_xai():
 
     # 1. Quét tất cả các file CSV
     csv_dir = base_dir_path / "IDS2018/CSV_Data"
-    all_files = [
-        os.path.join(csv_dir, f) for f in os.listdir(csv_dir) if f.endswith(".csv")
-    ]
+    # all_files = [
+    #     os.path.join(csv_dir, f) for f in os.listdir(csv_dir) if f.endswith(".csv")
+    # ]
+
+    import glob
+    all_files = glob.glob(str(csv_dir / "**/*.csv"), recursive=True)
 
     def _sanitize_for_filename(text):
         return "".join(
@@ -1878,7 +1879,7 @@ def stage4_xai():
 
     print("--- KHỞI CHẠY HỆ THỐNG PHÂN TÍCH XAI TỰ ĐỘNG ---")
 
-    # 1. Danh sách các model bạn đã train ở Stage 3
+    # 1. Danh sách các model đã train ở Stage 3
     model_files = [
         "stage3_rf_model.joblib",
         "stage3_xgb_model.joblib",
@@ -1886,11 +1887,16 @@ def stage4_xai():
         "stage3_cat_model.joblib",
     ]
 
-    # 2. Lấy mẫu 20000 dòng ngẫu nhiên để SHAP tính toán không bị sập RAM
+    # 2. Lấy mẫu 20000 dòng theo stratified để đảm bảo mọi class đều có đại diện
+    from sklearn.model_selection import train_test_split
     sample_size = min(20000, len(X_test_selected))
-    np.random.seed(42)
-    sample_idx = np.random.choice(len(X_test_selected), sample_size, replace=False)
-    X_test_sample = X_test_selected.iloc[sample_idx]
+    _, X_test_sample, _, sample_idx = train_test_split(
+        X_test_selected,
+        np.arange(len(y_test)),
+        test_size=sample_size,
+        stratify=y_test,
+        random_state=42
+    )
     y_test_sample = y_test[sample_idx]
 
     # Lấy danh sách tất cả các Class hiện có trong dữ liệu Test
@@ -1903,6 +1909,10 @@ def stage4_xai():
         # Lấy tên ngắn gọn của model (rf, xgb, lgb, cat)
         model_name = model_file.split("_model")[0].replace("stage3_", "")
 
+        # if model_name in ("lgb", "xgb"):  # Tạm thời bỏ qua
+        #     print(f"\n⏭️ Bỏ qua {model_name.upper()} tạm thời.")
+        #     continue
+        
         if not model_path.exists():
             print(
                 f"\n⚠️ Bỏ qua {model_name.upper()} vì không tìm thấy file {model_file}"
@@ -1926,24 +1936,6 @@ def stage4_xai():
             except:
                 pass  # Bỏ qua nếu model (như Random Forest) không có tham số device
 
-        # # Khởi tạo Explainer
-        # print(f"⏳ Đang tính toán SHAP values cho {model_name.upper()}...")
-        # explainer = shap.TreeExplainer(best_model)
-        # shap_values_obj = explainer(X_test_sample)
-
-        # # Khởi tạo Explainer
-        # print(f"⏳ Đang tính toán SHAP values cho {model_name.upper()}...")
-        # explainer = shap.TreeExplainer(best_model)
-
-        # # BÍ KÍP CHỐNG LỖI CATBOOST: Truyền .values để ẩn tên cột, tránh CatBoost bắt bẻ
-        # shap_values_obj = explainer(X_test_sample.values)
-
-        # # Dán lại tên thật vào đối tượng kết quả để biểu đồ hiển thị đúng tên chuyên ngành
-        # shap_values_obj.feature_names = list(X_test_sample.columns)
-
-        # # Kiểm tra số chiều (Multiclass thường trả về 3 chiều)
-        # is_multiclass = len(shap_values_obj.shape) == 3
-
         # Khởi tạo Explainer
         print(f"⏳ Đang tính toán SHAP values cho {model_name.upper()}...")
 
@@ -1957,7 +1949,7 @@ def stage4_xai():
                 n_jobs = total_cores - 1
             else:
                 # n_jobs = max(total_cores - 2, 8)
-                n_jobs = 8
+                n_jobs = 2
 
             # Linux server: ưu tiên threads để giảm overhead copy/pickle model lớn.
             rf_backend_env = os.environ.get("IDPS_SHAP_RF_BACKEND", "").strip().lower()
@@ -1995,7 +1987,8 @@ def stage4_xai():
                     return exp(batch_values)
 
                 results = Parallel(n_jobs=n_jobs, prefer=rf_backend, verbose=10)(
-                    delayed(_shap_batch_proc)(b.values, tmp_model_path) for b in batches
+                    # delayed(_shap_batch_proc)(b.values, tmp_model_path) for b in batches
+                    delayed(_shap_batch_proc)(b, tmp_model_path) for b in batches
                 )
 
                 os.remove(tmp_model_path)
@@ -2026,129 +2019,59 @@ def stage4_xai():
 
             # Tạo index trước để dùng cho cả trường hợp có cache lẫn không
             if model_name == "cat":
-                shap_sample_size = min(20000, len(X_test_sample))
-                rng = np.random.default_rng(42)
-                cat_idx = rng.choice(
-                    len(X_test_sample), shap_sample_size, replace=False
+                from sklearn.model_selection import train_test_split
+                shap_sample_size = min(20000, len(X_test_selected))
+                # shap_sample_size = len(X_test_selected)
+                _, X_shap_input, _, cat_idx = train_test_split(
+                    X_test_selected,
+                    np.arange(len(y_test)),
+                    test_size=shap_sample_size,
+                    stratify=y_test,
+                    random_state=42
                 )
-                X_shap_input = X_test_sample.iloc[cat_idx].reset_index(drop=True)
+                X_shap_input = X_shap_input.reset_index(drop=True)
                 print(f"⚠️  CAT+SHAP: dùng {shap_sample_size} mẫu...")
             else:
                 cat_idx = None
-                X_shap_input = X_test_sample
+                X_shap_input = X_test_sample 
 
+        if model_name == "cat":
+            from catboost import Pool
+            print(">>> Dùng CatBoost native SHAP...")
+            pool = Pool(X_shap_input.values, feature_names=list(important_features))
+            native_shap = np.asarray(
+                best_model.get_feature_importance(type="ShapValues", data=pool)
+            )
+
+            if native_shap.ndim == 2:
+                shap_matrix = native_shap[:, :-1]
+                base_values = native_shap[:, -1]
+            elif native_shap.ndim == 3:
+                shap_matrix = np.transpose(native_shap[:, :, :-1], (0, 2, 1))
+                base_values = native_shap[:, :, -1]
+            else:
+                raise RuntimeError(f"Unsupported native SHAP shape: {native_shap.shape}")
+
+            shap_values_obj = shap.Explanation(
+                values=shap_matrix,
+                base_values=base_values,
+                data=X_shap_input.values,
+                feature_names=list(X_shap_input.columns),
+            )
+            joblib.dump(shap_values_obj, shap_cache_path)
+            print(f"✅ Tính xong! Đã lưu cache tại {shap_cache_path}")
+
+        else:
             if os.path.exists(shap_cache_path):
-                print(
-                    f"✅ Tìm thấy SHAP cache {model_name.upper()}, load lại thay vì tính lại..."
-                )
+                print(f"✅ Tìm thấy SHAP cache {model_name.upper()}, load lại thay vì tính lại...")
                 shap_values_obj = joblib.load(shap_cache_path)
             else:
                 print(f"⏳ Tính toán SHAP cho {model_name.upper()}...")
-
-                if model_name == "cat":
-                    import traceback, sys
-
-                    try:
-                        print(">>> [1] Bắt đầu khởi tạo TreeExplainer...")
-                        sys.stdout.flush()
-                        explainer = shap.TreeExplainer(
-                            best_model,
-                            data=X_shap_input.iloc[:200],
-                            model_output="raw",
-                            feature_perturbation="interventional",
-                        )
-                        # explainer = shap.TreeExplainer(best_model)
-                        print(">>> [2] TreeExplainer OK, bắt đầu tính batch...")
-                        sys.stdout.flush()
-
-                        batch_size = 500
-                        shap_batches = []
-                        for i in range(0, len(X_shap_input), batch_size):
-                            batch = X_shap_input.iloc[i : i + batch_size]
-                            sv = explainer.shap_values(batch)
-                            if isinstance(sv, shap.Explanation):
-                                shap_batches.append(sv.values)
-                            elif isinstance(sv, list):
-                                shap_batches.append([np.asarray(v) for v in sv])
-                            else:
-                                shap_batches.append(np.asarray(sv))
-                            gc.collect()
-                            print(
-                                f"   ✔ Batch {i//batch_size + 1}/{(len(X_shap_input)-1)//batch_size + 1} xong"
-                            )
-                            sys.stdout.flush()
-
-                        if isinstance(shap_batches[0], list):
-                            n_classes = len(shap_batches[0])
-                            shap_matrix = np.stack(
-                                [
-                                    np.concatenate([b[c] for b in shap_batches], axis=0)
-                                    for c in range(n_classes)
-                                ],
-                                axis=-1,
-                            )
-                        else:
-                            shap_matrix = np.concatenate(shap_batches, axis=0)
-
-                        base_vals = explainer.expected_value
-                        if isinstance(base_vals, (list, np.ndarray)):
-                            base_values = np.tile(
-                                np.array(base_vals), (len(X_shap_input), 1)
-                            )
-                        else:
-                            base_values = np.full(len(X_shap_input), float(base_vals))
-
-                        shap_values_obj = shap.Explanation(
-                            values=shap_matrix,
-                            base_values=base_values,
-                            data=X_shap_input.values,
-                            feature_names=list(X_shap_input.columns),
-                        )
-
-                    except Exception as e:
-                        print(f">>> Cảnh báo SHAP-CatBoost lỗi: {e}")
-                        traceback.print_exc()
-                        sys.stdout.flush()
-                        print(
-                            ">>> Fallback: dùng CatBoost native SHAP để tương thích Linux/Windows..."
-                        )
-
-                        pool = Pool(
-                            X_shap_input, feature_names=list(X_shap_input.columns)
-                        )
-                        native_shap = np.asarray(
-                            best_model.get_feature_importance(
-                                type="ShapValues", data=pool
-                            )
-                        )
-
-                        if native_shap.ndim == 2:
-                            shap_matrix = native_shap[:, :-1]
-                            base_values = native_shap[:, -1]
-                        elif native_shap.ndim == 3:
-                            # CatBoost multiclass: [n_samples, n_classes, n_features+1]
-                            shap_matrix = np.transpose(
-                                native_shap[:, :, :-1], (0, 2, 1)
-                            )
-                            base_values = native_shap[:, :, -1]
-                        else:
-                            raise RuntimeError(
-                                f"Unsupported native SHAP shape: {native_shap.shape}"
-                            )
-
-                        shap_values_obj = shap.Explanation(
-                            values=shap_matrix,
-                            base_values=base_values,
-                            data=X_shap_input.values,
-                            feature_names=list(X_shap_input.columns),
-                        )
-                else:
-                    explainer = shap.TreeExplainer(best_model)
-                    shap_values_obj = explainer(X_shap_input.values)
-                    shap_values_obj.feature_names = list(X_shap_input.columns)
-
+                explainer = shap.TreeExplainer(best_model)
+                shap_values_obj = explainer(X_shap_input.values)
+                shap_values_obj.feature_names = list(X_shap_input.columns)
                 joblib.dump(shap_values_obj, shap_cache_path)
-                print(f"✅ Tính xong! Đã lưu cache tại {shap_cache_path}")
+                print(f"✅ Tính xong! Đã lưu cache tại {shap_cache_path}") 
 
         # Kiểm tra số chiều (Multiclass thường trả về 3 chiều)
         is_multiclass = len(shap_values_obj.shape) == 3
@@ -2156,9 +2079,9 @@ def stage4_xai():
         if model_name == "rf":
             X_plot = X_shap_rf
             y_plot = y_test_sample[rf_idx]
-        elif model_name == "cat" and cat_idx is not None:
+        elif model_name == "cat":
             X_plot = X_shap_input
-            y_plot = y_test_sample[cat_idx]
+            y_plot = y_test[cat_idx]
         else:
             X_plot = X_test_sample
             y_plot = y_test_sample
@@ -2167,11 +2090,6 @@ def stage4_xai():
         print(f"📊 Đang vẽ Bar Plot tổng hợp...")
         plt.figure(figsize=(12, 8))
         plt.title(f"SHAP Feature Importance ({model_name.upper()})", fontsize=14)
-
-        # Xử lý lỗi IndexError của SHAP với Random Forest/LightGBM (mảng 3 chiều)
-        # if is_multiclass:
-        #     # Ép SHAP chỉ vẽ Bar Plot cho Class 1 (Tấn công) để tránh lỗi
-        #     shap.plots.bar(shap_values_obj[:, :, 1], max_display=15, show=False)
 
         if is_multiclass:
             mean_shap = shap.Explanation(
@@ -2231,7 +2149,7 @@ def stage4_xai():
                     np.argmin(distances)
                 ]  # Mẫu gần tâm nhất
                 predicted_class = int(
-                    best_model.predict(X_plot.iloc[[instance_idx]].values)[0]
+                    best_model.predict(X_plot.iloc[[instance_idx]].values).flatten()[0]
                 )
                 predicted_class_name = class_id_to_name.get(
                     predicted_class, f"Class_{predicted_class}"
@@ -2259,7 +2177,7 @@ def stage4_xai():
                 plt.close()
             else:
                 print(
-                    f"      (Không có gói tin nào thuộc class {cls_name} lọt vào tập sample 2000 dòng để vẽ Waterfall)"
+                    f"      (Không có gói tin nào thuộc class {cls_name} lọt vào tập sample {len(y_plot)} dòng để vẽ Waterfall)"
                 )
 
         print(f"✅ Hoàn tất phân tích {model_name.upper()}!")
@@ -2277,7 +2195,7 @@ if __name__ == "__main__":
     print(" QUY TRÌNH IDS2018 END-TO-END PIPELINE ")
     print("=========================================================")
 
-    # Bật/tắt các hàm bên dưới tuỳ thuộc vào stage bạn muốn chạy:
+    # Bật/tắt các hàm bên dưới tuỳ thuộc vào stage muốn chạy:
 
     download_dataset()
     stage0_preprocessing()
