@@ -7,7 +7,7 @@
 # Shell scripts
 *.sh text eol=lf
 
-# YAML / config
+# YAML/config
 *.yml  text eol=lf
 *.yaml text eol=lf
 *.json text eol=lf
