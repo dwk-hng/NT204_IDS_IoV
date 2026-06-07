@@ -1,0 +1,14 @@
+awscli
+catboost
+hyperopt
+imbalanced-learn
+joblib
+lightgbm
+matplotlib
+numpy
+pandas
+scikit-learn
+seaborn
+shap
+torch
+xgboost
