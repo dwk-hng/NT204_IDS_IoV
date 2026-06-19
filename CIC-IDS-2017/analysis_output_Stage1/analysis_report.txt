@@ -1,0 +1,347 @@
+CIC-IDS-2017 DEEP ANALYSIS REPORT
+================================================================================
+
+A. OVERVIEW
+--------------------------------------------------------------------------------
+Source file: cic-ids-2017-merge.csv
+Total chunks processed: 15
+Chunk size: 200000
+Total rows: 2830743
+Total columns: 79
+Sampled rows for heavy analysis: 120000
+
+B. DATA QUALITY
+--------------------------------------------------------------------------------
+Total NaN cells: 1358
+Total Infinity cells: 4376
+Total duplicate rows (exact): 308381
+Duplicate ratio: 0.108940
+
+Top 30 columns by NaN count:
+  - Flow Bytes/s: 1358 (0.047973%)
+  - Flow Duration: 0 (0.000000%)
+  - Destination Port: 0 (0.000000%)
+  - Total Backward Packets: 0 (0.000000%)
+  - Total Length of Fwd Packets: 0 (0.000000%)
+  - Total Length of Bwd Packets: 0 (0.000000%)
+  - Total Fwd Packets: 0 (0.000000%)
+  - Fwd Packet Length Max: 0 (0.000000%)
+  - Fwd Packet Length Min: 0 (0.000000%)
+  - Fwd Packet Length Std: 0 (0.000000%)
+  - Fwd Packet Length Mean: 0 (0.000000%)
+  - Bwd Packet Length Max: 0 (0.000000%)
+  - Bwd Packet Length Min: 0 (0.000000%)
+  - Bwd Packet Length Mean: 0 (0.000000%)
+  - Bwd Packet Length Std: 0 (0.000000%)
+  - Flow Packets/s: 0 (0.000000%)
+  - Flow IAT Mean: 0 (0.000000%)
+  - Flow IAT Std: 0 (0.000000%)
+  - Flow IAT Max: 0 (0.000000%)
+  - Flow IAT Min: 0 (0.000000%)
+  - Fwd IAT Total: 0 (0.000000%)
+  - Fwd IAT Mean: 0 (0.000000%)
+  - Fwd IAT Std: 0 (0.000000%)
+  - Fwd IAT Max: 0 (0.000000%)
+  - Fwd IAT Min: 0 (0.000000%)
+  - Bwd IAT Total: 0 (0.000000%)
+  - Bwd IAT Mean: 0 (0.000000%)
+  - Bwd IAT Std: 0 (0.000000%)
+  - Bwd IAT Max: 0 (0.000000%)
+  - Bwd IAT Min: 0 (0.000000%)
+
+Top 30 columns by Infinity count:
+  - Flow Packets/s: 2867 (0.101281%)
+  - Flow Bytes/s: 1509 (0.053308%)
+  - Total Fwd Packets: 0 (0.000000%)
+  - Total Backward Packets: 0 (0.000000%)
+  - Destination Port: 0 (0.000000%)
+  - Flow Duration: 0 (0.000000%)
+  - Fwd Packet Length Max: 0 (0.000000%)
+  - Fwd Packet Length Min: 0 (0.000000%)
+  - Fwd Packet Length Mean: 0 (0.000000%)
+  - Fwd Packet Length Std: 0 (0.000000%)
+  - Bwd Packet Length Max: 0 (0.000000%)
+  - Bwd Packet Length Min: 0 (0.000000%)
+  - Total Length of Fwd Packets: 0 (0.000000%)
+  - Total Length of Bwd Packets: 0 (0.000000%)
+  - Bwd Packet Length Std: 0 (0.000000%)
+  - Bwd Packet Length Mean: 0 (0.000000%)
+  - Flow IAT Mean: 0 (0.000000%)
+  - Flow IAT Std: 0 (0.000000%)
+  - Flow IAT Max: 0 (0.000000%)
+  - Flow IAT Min: 0 (0.000000%)
+  - Fwd IAT Total: 0 (0.000000%)
+  - Fwd IAT Mean: 0 (0.000000%)
+  - Fwd IAT Std: 0 (0.000000%)
+  - Fwd IAT Max: 0 (0.000000%)
+  - Fwd IAT Min: 0 (0.000000%)
+  - Bwd IAT Total: 0 (0.000000%)
+  - Bwd IAT Mean: 0 (0.000000%)
+  - Bwd IAT Std: 0 (0.000000%)
+  - Bwd IAT Max: 0 (0.000000%)
+  - Bwd IAT Min: 0 (0.000000%)
+
+C. LABELS / ATTACK TYPES
+--------------------------------------------------------------------------------
+Number of unique labels: 15
+Attack labels (excluding benign): 14
+Imbalance ratio (majority/minority): 206645.1818
+
+All labels:
+  - BENIGN
+  - DoS Hulk
+  - PortScan
+  - DDoS
+  - DoS GoldenEye
+  - FTP-Patator
+  - SSH-Patator
+  - DoS slowloris
+  - DoS Slowhttptest
+  - Bot
+  - Web Attack � Brute Force
+  - Web Attack � XSS
+  - Infiltration
+  - Web Attack � Sql Injection
+  - Heartbleed
+
+Attack types:
+  - DoS Hulk
+  - PortScan
+  - DDoS
+  - DoS GoldenEye
+  - FTP-Patator
+  - SSH-Patator
+  - DoS slowloris
+  - DoS Slowhttptest
+  - Bot
+  - Web Attack � Brute Force
+  - Web Attack � XSS
+  - Infiltration
+  - Web Attack � Sql Injection
+  - Heartbleed
+
+Samples per label:
+  - BENIGN: 2273097 (80.300366%)
+  - DoS Hulk: 231073 (8.162981%)
+  - PortScan: 158930 (5.614427%)
+  - DDoS: 128027 (4.522735%)
+  - DoS GoldenEye: 10293 (0.363615%)
+  - FTP-Patator: 7938 (0.280421%)
+  - SSH-Patator: 5897 (0.208320%)
+  - DoS slowloris: 5796 (0.204752%)
+  - DoS Slowhttptest: 5499 (0.194260%)
+  - Bot: 1966 (0.069452%)
+  - Web Attack � Brute Force: 1507 (0.053237%)
+  - Web Attack � XSS: 652 (0.023033%)
+  - Infiltration: 36 (0.001272%)
+  - Web Attack � Sql Injection: 21 (0.000742%)
+  - Heartbleed: 11 (0.000389%)
+
+D. NUMERIC FEATURE SUMMARY (chunk-based full data)
+--------------------------------------------------------------------------------
+Flow Duration: count=2830743, mean=14785663.929522, std=33653738.141524, min=-13.000000, max=119999998.000000
+Fwd IAT Total: count=2830743, mean=14482961.734189, std=33575805.715901, min=0.000000, max=120000000.000000
+Bwd IAT Total: count=2830743, mean=9893830.350137, std=28736609.123079, min=0.000000, max=120000000.000000
+Flow IAT Max: count=2830743, mean=9182475.317051, std=24459534.930503, min=-13.000000, max=120000000.000000
+Fwd IAT Max: count=2830743, mean=9042938.558814, std=24529153.067063, min=0.000000, max=120000000.000000
+Idle Max: count=2830743, mean=8695751.984586, std=24366884.025069, min=0.000000, max=120000000.000000
+Idle Mean: count=2830743, mean=8316036.627208, std=23630074.404120, min=0.000000, max=120000000.000000
+Idle Min: count=2830743, mean=7920031.014637, std=23363414.800749, min=0.000000, max=120000000.000000
+Bwd IAT Max: count=2830743, mean=4684692.427954, std=17160947.027452, min=0.000000, max=120000000.000000
+Fwd IAT Std: count=2830743, mean=3266957.222051, std=9639053.697782, min=0.000000, max=84602929.276982
+Flow IAT Std: count=2830743, mean=2919270.918755, std=8045868.358496, min=0.000000, max=84800261.566408
+Fwd IAT Mean: count=2830743, mean=2610192.973542, std=9525720.802778, min=0.000000, max=120000000.000000
+Bwd IAT Mean: count=2830743, mean=1805783.767378, std=8887195.509243, min=0.000000, max=120000000.000000
+Flow Bytes/s: count=2827876, mean=1491719.064342, std=25940151.083404, min=-261000000.000000, max=2071000000.000000
+Bwd IAT Std: count=2830743, mean=1485973.347339, std=6278467.456103, min=0.000000, max=84418013.782634
+Flow IAT Mean: count=2830743, mean=1298448.708665, std=4507943.377547, min=-13.000000, max=120000000.000000
+Fwd IAT Min: count=2830743, mean=1021892.905134, std=8591434.821031, min=-12.000000, max=120000000.000000
+Bwd IAT Min: count=2830743, mean=967261.370757, std=8308981.623682, min=0.000000, max=120000000.000000
+Idle Std: count=2830743, mean=503843.949779, std=4602983.667637, min=0.000000, max=76900000.000000
+Packet Length Variance: count=2830743, mean=486154.794138, std=1647489.574310, min=0.000000, max=22400000.000000
+Flow IAT Min: count=2830743, mean=162379.561784, std=2950281.255691, min=-14.000000, max=120000000.000000
+Active Max: count=2830743, mean=153182.521270, std=1025824.793717, min=0.000000, max=110000000.000000
+Active Mean: count=2830743, mean=81551.321012, std=648599.822210, min=0.000000, max=110000000.000000
+Flow Packets/s: count=2827876, mean=70854.233063, std=254415.392913, min=-2000000.000000, max=4000000.000000
+Fwd Packets/s: count=2830743, mean=63865.346411, std=247537.085919, min=0.000000, max=3000000.000000
+Active Min: count=2830743, mean=58295.817744, std=577092.179977, min=0.000000, max=110000000.000000
+Active Std: count=2830743, mean=41134.116775, std=393381.445833, min=0.000000, max=74200000.000000
+Total Length of Bwd Packets: count=2830743, mean=16162.642546, std=2263087.651992, min=0.000000, max=655453030.000000
+Subflow Bwd Bytes: count=2830743, mean=16162.302468, std=2263056.883780, min=0.000000, max=655453030.000000
+Destination Port: count=2830743, mean=8071.482501, std=18283.628943, min=0.000000, max=65535.000000
+Bwd Packets/s: count=2830743, mean=6995.191743, std=38151.690944, min=0.000000, max=2000000.000000
+Init_Win_bytes_forward: count=2830743, mean=6989.837446, std=14338.723304, min=-1.000000, max=65535.000000
+Init_Win_bytes_backward: count=2830743, mean=1989.432977, std=8456.881663, min=-1.000000, max=65535.000000
+Max Packet Length: count=2830743, mean=950.402445, std=2028.228788, min=0.000000, max=24820.000000
+Bwd Packet Length Max: count=2830743, mean=870.849455, std=1946.367033, min=0.000000, max=19530.000000
+Total Length of Fwd Packets: count=2830743, mean=549.302415, std=9993.587464, min=0.000000, max=12900000.000000
+Subflow Fwd Bytes: count=2830743, mean=549.291936, std=9980.068481, min=0.000000, max=12870338.000000
+Bwd Packet Length Std: count=2830743, mean=335.325721, std=839.693069, min=0.000000, max=8194.660487
+Avg Bwd Segment Size: count=2830743, mean=305.949281, std=605.256693, min=0.000000, max=5800.500000
+Bwd Packet Length Mean: count=2830743, mean=305.949281, std=605.256693, min=0.000000, max=5800.500000
+Packet Length Std: count=2830743, mean=294.975554, std=631.799961, min=0.000000, max=4731.522394
+Fwd Packet Length Max: count=2830743, mean=207.599941, std=717.184715, min=0.000000, max=24820.000000
+Average Packet Size: count=2830743, mean=191.983658, std=331.860291, min=0.000000, max=3893.333333
+Packet Length Mean: count=2830743, mean=171.944390, std=305.491407, min=0.000000, max=3337.142857
+Fwd Packet Length Std: count=2830743, mean=68.910134, std=281.187042, min=0.000000, max=7125.596846
+Fwd Packet Length Mean: count=2830743, mean=58.201939, std=186.091124, min=0.000000, max=5940.857143
+Avg Fwd Segment Size: count=2830743, mean=58.201939, std=186.091124, min=0.000000, max=5940.857143
+Bwd Packet Length Min: count=2830743, mean=41.049579, std=68.862590, min=0.000000, max=2896.000000
+Fwd Packet Length Min: count=2830743, mean=18.713656, std=60.339335, min=0.000000, max=2325.000000
+Min Packet Length: count=2830743, mean=16.434505, std=25.237716, min=0.000000, max=1448.000000
+Subflow Bwd Packets: count=2830743, mean=10.393770, std=997.388093, min=0.000000, max=291922.000000
+Total Backward Packets: count=2830743, mean=10.393770, std=997.388093, min=0.000000, max=291922.000000
+Total Fwd Packets: count=2830743, mean=9.361160, std=749.672660, min=1.000000, max=219759.000000
+Subflow Fwd Packets: count=2830743, mean=9.361160, std=749.672660, min=1.000000, max=219759.000000
+act_data_pkt_fwd: count=2830743, mean=5.418218, std=636.425551, min=0.000000, max=213557.000000
+Down/Up Ratio: count=2830743, mean=0.683500, std=0.680492, min=0.000000, max=156.000000
+ACK Flag Count: count=2830743, mean=0.315844, std=0.464851, min=0.000000, max=1.000000
+PSH Flag Count: count=2830743, mean=0.298071, std=0.457411, min=0.000000, max=1.000000
+URG Flag Count: count=2830743, mean=0.094823, std=0.292971, min=0.000000, max=1.000000
+Fwd PSH Flags: count=2830743, mean=0.046446, std=0.210450, min=0.000000, max=1.000000
+SYN Flag Count: count=2830743, mean=0.046446, std=0.210450, min=0.000000, max=1.000000
+FIN Flag Count: count=2830743, mean=0.035380, std=0.184738, min=0.000000, max=1.000000
+ECE Flag Count: count=2830743, mean=0.000243, std=0.015599, min=0.000000, max=1.000000
+RST Flag Count: count=2830743, mean=0.000242, std=0.015565, min=0.000000, max=1.000000
+Fwd URG Flags: count=2830743, mean=0.000111, std=0.010548, min=0.000000, max=1.000000
+CWE Flag Count: count=2830743, mean=0.000111, std=0.010548, min=0.000000, max=1.000000
+Fwd Avg Bulk Rate: count=2830743, mean=0.000000, std=0.000000, min=0.000000, max=0.000000
+Bwd Avg Bulk Rate: count=2830743, mean=0.000000, std=0.000000, min=0.000000, max=0.000000
+Bwd URG Flags: count=2830743, mean=0.000000, std=0.000000, min=0.000000, max=0.000000
+Bwd PSH Flags: count=2830743, mean=0.000000, std=0.000000, min=0.000000, max=0.000000
+Fwd Avg Bytes/Bulk: count=2830743, mean=0.000000, std=0.000000, min=0.000000, max=0.000000
+Fwd Avg Packets/Bulk: count=2830743, mean=0.000000, std=0.000000, min=0.000000, max=0.000000
+Bwd Avg Bytes/Bulk: count=2830743, mean=0.000000, std=0.000000, min=0.000000, max=0.000000
+Bwd Avg Packets/Bulk: count=2830743, mean=0.000000, std=0.000000, min=0.000000, max=0.000000
+Bwd Header Length: count=2830743, mean=-2273.275320, std=1452208.683084, min=-1073741320.000000, max=5838440.000000
+min_seg_size_forward: count=2830743, mean=-2741.687869, std=1084989.192173, min=-536870661.000000, max=138.000000
+Fwd Header Length: count=2830743, mean=-25997.391976, std=21052854.154564, min=-32212234632.000000, max=4644908.000000
+Fwd Header Length.1: count=2830743, mean=-25997.391976, std=21052854.154564, min=-32212234632.000000, max=4644908.000000
+
+E. EXTRA ROBUST STATS (sample-based)
+--------------------------------------------------------------------------------
+Destination Port: median=123.000000, Q1=53.000000, Q3=1971.000000, IQR=1918.000000, outlier_ratio=21.258333%
+Flow Duration: median=47262.500000, Q1=94.000000, Q3=3329011.250000, IQR=3328917.250000, outlier_ratio=16.556667%
+Total Fwd Packets: median=2.000000, Q1=1.000000, Q3=5.000000, IQR=4.000000, outlier_ratio=9.904167%
+Total Backward Packets: median=1.000000, Q1=1.000000, Q3=5.000000, IQR=4.000000, outlier_ratio=8.286667%
+Total Length of Fwd Packets: median=47.000000, Q1=6.000000, Q3=120.000000, IQR=114.000000, outlier_ratio=20.875833%
+Total Length of Bwd Packets: median=96.000000, Q1=6.000000, Q3=536.000000, IQR=530.000000, outlier_ratio=21.930000%
+Fwd Packet Length Max: median=32.000000, Q1=6.000000, Q3=56.000000, IQR=50.000000, outlier_ratio=21.022500%
+Fwd Packet Length Min: median=2.000000, Q1=0.000000, Q3=32.000000, IQR=32.000000, outlier_ratio=0.911667%
+Fwd Packet Length Mean: median=23.000000, Q1=6.000000, Q3=49.000000, IQR=43.000000, outlier_ratio=7.780000%
+Fwd Packet Length Std: median=0.000000, Q1=0.000000, Q3=17.677670, IQR=17.677670, outlier_ratio=20.557500%
+Bwd Packet Length Max: median=62.000000, Q1=6.000000, Q3=326.000000, IQR=320.000000, outlier_ratio=22.172500%
+Bwd Packet Length Min: median=6.000000, Q1=0.000000, Q3=54.000000, IQR=54.000000, outlier_ratio=7.095833%
+Bwd Packet Length Mean: median=55.000000, Q1=6.000000, Q3=183.000000, IQR=177.000000, outlier_ratio=16.913333%
+Bwd Packet Length Std: median=0.000000, Q1=0.000000, Q3=116.833779, IQR=116.833779, outlier_ratio=22.550833%
+Flow Bytes/s: median=7413.836761, Q1=149.638022, Q3=154316.456599, IQR=154166.818577, outlier_ratio=15.938333%
+Flow Packets/s: median=85.077420, Q1=3.003805, Q3=25316.455700, IQR=25313.451895, outlier_ratio=8.533333%
+Flow IAT Mean: median=15904.923077, Q1=64.000000, Q3=374411.714286, IQR=374347.714286, outlier_ratio=19.436667%
+Flow IAT Std: median=159.070215, Q1=0.000000, Q3=907829.224833, IQR=907829.224833, outlier_ratio=18.914167%
+Flow IAT Max: median=32382.500000, Q1=92.000000, Q3=3000071.500000, IQR=2999979.500000, outlier_ratio=16.955833%
+Flow IAT Min: median=15.000000, Q1=3.000000, Q3=72.000000, IQR=69.000000, outlier_ratio=18.140000%
+Fwd IAT Total: median=47.000000, Q1=0.000000, Q3=1053466.000000, IQR=1053466.000000, outlier_ratio=23.078333%
+Fwd IAT Mean: median=47.000000, Q1=0.000000, Q3=179219.291675, IQR=179219.291675, outlier_ratio=23.609167%
+Fwd IAT Std: median=0.000000, Q1=0.000000, Q3=63708.299895, IQR=63708.299895, outlier_ratio=23.121667%
+Fwd IAT Max: median=47.000000, Q1=0.000000, Q3=748254.750000, IQR=748254.750000, outlier_ratio=23.506667%
+Fwd IAT Min: median=3.000000, Q1=0.000000, Q3=49.000000, IQR=49.000000, outlier_ratio=20.300000%
+Bwd IAT Total: median=0.000000, Q1=0.000000, Q3=149381.750000, IQR=149381.750000, outlier_ratio=21.245833%
+Bwd IAT Mean: median=0.000000, Q1=0.000000, Q3=28530.666667, IQR=28530.666667, outlier_ratio=21.111667%
+Bwd IAT Std: median=0.000000, Q1=0.000000, Q3=24774.140993, IQR=24774.140993, outlier_ratio=20.659167%
+Bwd IAT Max: median=0.000000, Q1=0.000000, Q3=89271.500000, IQR=89271.500000, outlier_ratio=21.478333%
+Bwd IAT Min: median=0.000000, Q1=0.000000, Q3=4.000000, IQR=4.000000, outlier_ratio=23.464167%
+Fwd PSH Flags: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Bwd PSH Flags: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Fwd URG Flags: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Bwd URG Flags: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Fwd Header Length: median=64.000000, Q1=40.000000, Q3=100.000000, IQR=60.000000, outlier_ratio=15.005833%
+Bwd Header Length: median=40.000000, Q1=20.000000, Q3=112.000000, IQR=92.000000, outlier_ratio=10.068333%
+Fwd Packets/s: median=42.890843, Q1=1.650996, Q3=13157.894740, IQR=13156.243744, outlier_ratio=9.045833%
+Bwd Packets/s: median=20.037671, Q1=0.178928, Q3=9523.809524, IQR=9523.630596, outlier_ratio=6.069167%
+Min Packet Length: median=2.000000, Q1=0.000000, Q3=32.000000, IQR=32.000000, outlier_ratio=0.549167%
+Max Packet Length: median=76.000000, Q1=6.000000, Q3=821.000000, IQR=815.000000, outlier_ratio=14.511667%
+Packet Length Mean: median=52.800000, Q1=6.000000, Q3=132.666667, IQR=126.666667, outlier_ratio=15.815000%
+Packet Length Std: median=21.361960, Q1=2.309401, Q3=248.969529, IQR=246.660128, outlier_ratio=15.021667%
+Packet Length Variance: median=456.333333, Q1=5.333333, Q3=61985.826174, IQR=61980.492840, outlier_ratio=22.115000%
+FIN Flag Count: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+SYN Flag Count: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+RST Flag Count: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+PSH Flag Count: median=0.000000, Q1=0.000000, Q3=1.000000, IQR=1.000000, outlier_ratio=0.000000%
+ACK Flag Count: median=0.000000, Q1=0.000000, Q3=1.000000, IQR=1.000000, outlier_ratio=0.000000%
+URG Flag Count: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+CWE Flag Count: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+ECE Flag Count: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Down/Up Ratio: median=1.000000, Q1=0.000000, Q3=1.000000, IQR=1.000000, outlier_ratio=1.913333%
+Average Packet Size: median=68.750000, Q1=7.200000, Q3=159.752155, IQR=152.552155, outlier_ratio=14.439167%
+Avg Fwd Segment Size: median=23.000000, Q1=6.000000, Q3=49.000000, IQR=43.000000, outlier_ratio=7.780000%
+Avg Bwd Segment Size: median=55.000000, Q1=6.000000, Q3=183.000000, IQR=177.000000, outlier_ratio=16.913333%
+Fwd Header Length.1: median=64.000000, Q1=40.000000, Q3=100.000000, IQR=60.000000, outlier_ratio=15.005833%
+Fwd Avg Bytes/Bulk: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Fwd Avg Packets/Bulk: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Fwd Avg Bulk Rate: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Bwd Avg Bytes/Bulk: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Bwd Avg Packets/Bulk: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Bwd Avg Bulk Rate: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Subflow Fwd Packets: median=2.000000, Q1=1.000000, Q3=5.000000, IQR=4.000000, outlier_ratio=9.904167%
+Subflow Fwd Bytes: median=47.000000, Q1=6.000000, Q3=120.000000, IQR=114.000000, outlier_ratio=20.875833%
+Subflow Bwd Packets: median=1.000000, Q1=1.000000, Q3=5.000000, IQR=4.000000, outlier_ratio=8.286667%
+Subflow Bwd Bytes: median=96.000000, Q1=6.000000, Q3=536.000000, IQR=530.000000, outlier_ratio=21.930000%
+Init_Win_bytes_forward: median=360.000000, Q1=-1.000000, Q3=8192.000000, IQR=8193.000000, outlier_ratio=20.556667%
+Init_Win_bytes_backward: median=0.000000, Q1=-1.000000, Q3=229.000000, IQR=230.000000, outlier_ratio=9.425000%
+act_data_pkt_fwd: median=1.000000, Q1=0.000000, Q3=3.000000, IQR=3.000000, outlier_ratio=7.669167%
+min_seg_size_forward: median=20.000000, Q1=20.000000, Q3=32.000000, IQR=12.000000, outlier_ratio=0.066667%
+Active Mean: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Active Std: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Active Max: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Active Min: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Idle Mean: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Idle Std: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Idle Max: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+Idle Min: median=0.000000, Q1=0.000000, Q3=0.000000, IQR=0.000000, outlier_ratio=nan%
+
+F. STRONGEST CORRELATIONS (sample-based)
+--------------------------------------------------------------------------------
+Top positive pairs:
+  - Fwd Header Length <-> Fwd Header Length.1: 1.000000
+  - Total Length of Bwd Packets <-> Subflow Bwd Bytes: 1.000000
+  - Flow Duration <-> Fwd IAT Total: 0.997795
+  - Fwd Header Length.1 <-> min_seg_size_forward: 0.997169
+  - Fwd Header Length <-> min_seg_size_forward: 0.997169
+  - Fwd IAT Max <-> Flow IAT Max: 0.994679
+  - Flow IAT Max <-> Idle Max: 0.975751
+  - Fwd IAT Max <-> Idle Max: 0.972990
+  - Idle Max <-> Idle Mean: 0.968705
+  - Bwd IAT Mean <-> Bwd IAT Min: 0.963582
+  - Idle Mean <-> Idle Min: 0.954047
+  - Flow IAT Max <-> Idle Mean: 0.944880
+  - Fwd IAT Mean <-> Fwd IAT Min: 0.938893
+  - Fwd IAT Max <-> Idle Mean: 0.938440
+  - Active Mean <-> Active Min: 0.918467
+
+Top negative pairs:
+  - Active Std <-> min_seg_size_forward: -0.054380
+  - Active Std <-> Fwd Header Length: -0.053614
+  - Active Std <-> Fwd Header Length.1: -0.053614
+  - Fwd IAT Min <-> Packet Length Variance: -0.037240
+  - Bwd IAT Min <-> Packet Length Variance: -0.035930
+  - Fwd IAT Min <-> Fwd IAT Std: -0.031162
+  - Bwd IAT Mean <-> Packet Length Variance: -0.027808
+  - Active Max <-> min_seg_size_forward: -0.027669
+  - Active Max <-> Fwd Header Length: -0.026833
+  - Active Max <-> Fwd Header Length.1: -0.026833
+  - Flow Duration <-> Flow Bytes/s: -0.023187
+  - Fwd IAT Total <-> Flow Bytes/s: -0.022512
+  - Active Mean <-> min_seg_size_forward: -0.021599
+  - Active Mean <-> Fwd Header Length: -0.020877
+  - Active Mean <-> Fwd Header Length.1: -0.020877
+
+G. GENERATED ARTIFACTS IN analysis_output
+--------------------------------------------------------------------------------
+analysis_report.txt
+class_distribution.png
+heatmap.png
+correlation_heatmap.png
+feature_histograms.png
+feature_importance_top10.png
+outliers_boxplot.png
+pca_scatter.png
