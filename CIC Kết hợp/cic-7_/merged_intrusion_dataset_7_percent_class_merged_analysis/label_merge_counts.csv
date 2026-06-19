@@ -1,0 +1,46 @@
+original_label,merged_label,count
+TFTP,TFTP,1405780
+Benign,Benign,1111331
+Syn,Syn,453374
+MSSQL,MSSQL,405423
+DrDoS_SNMP,DrDoS_SNMP,361144
+DrDoS_DNS,DrDoS_DNS,354891
+DrDoS_MSSQL,DrDoS_MSSQL,315869
+DrDoS_NetBIOS,DrDoS_NetBIOS,286585
+UDP,UDP,270636
+NetBIOS,NetBIOS,255959
+DrDoS_UDP,DrDoS_UDP,219353
+DrDoS_SSDP,DrDoS_SSDP,182582
+DrDoS_LDAP,DrDoS_LDAP,152756
+LDAP,LDAP,133592
+DrDoS_NTP,DrDoS_NTP,84088
+DDOS attack-HOIC,DDoS,48100
+DDoS attacks-LOIC-HTTP,DDoS,40232
+DoS attacks-Hulk,DoS_Hulk,32128
+UDP-lag,UDP_Lag,25872
+Bot,Bot,20104
+DoS Hulk,DoS_Hulk,16564
+FTP-BruteForce,FTP_BruteForce,13570
+SSH-Bruteforce,SSH_BruteForce,13366
+Portmap,Portmap,12987
+Infilteration,Infiltration,11345
+PortScan,PortScan,11089
+DoS attacks-SlowHTTPTest,DoS_SlowHTTPTest,9959
+DDoS,DDoS,9023
+DoS attacks-GoldenEye,DoS_GoldenEye,2914
+DoS attacks-Slowloris,DoS_Slowloris,751
+DoS GoldenEye,DoS_GoldenEye,722
+FTP-Patator,FTP_BruteForce,580
+DoS Slowhttptest,DoS_SlowHTTPTest,418
+SSH-Patator,SSH_BruteForce,412
+DoS slowloris,DoS_Slowloris,390
+UDPLag,UDP_Lag,135
+DDOS attack-LOIC-UDP,DDoS,120
+Web Attack-Brute Force,Web_Attack,112
+Web Attack-XSS,Web_Attack,42
+Brute Force-Web,Web_Attack,34
+WebDDoS,DDoS,33
+Brute Force-XSS,Web_Attack,15
+SQL Injection,Web_Attack,9
+Infiltration,Infiltration,1
+Web Attack-Sql Injection,Web_Attack,1

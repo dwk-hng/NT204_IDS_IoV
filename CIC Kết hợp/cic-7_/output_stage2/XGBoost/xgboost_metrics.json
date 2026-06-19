@@ -1,0 +1,10 @@
+{
+  "model": "XGBoost",
+  "accuracy": 0.6753398247996271,
+  "precision_weighted": 0.7217097469920863,
+  "recall_weighted": 0.6753398247996271,
+  "f1_weighted": 0.6842115121479366,
+  "precision_macro": 0.5182105698623162,
+  "recall_macro": 0.5829718334937473,
+  "f1_macro": 0.5037745736599696
+}

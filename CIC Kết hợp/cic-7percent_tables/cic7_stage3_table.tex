@@ -1,0 +1,51 @@
+﻿\begin{table}[htbp]
+\centering
+\caption{Stage III F1-score comparison after model optimization on the CIC-7\% dataset. Summary precision, recall, and F1 use weighted averages.}
+\label{tab:cic7_stage3_table}
+\small
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{tabular}{llcccc}
+\toprule
+\multicolumn{6}{c}{\textbf{CIC-7% Stage III dataset}} \\
+\midrule
+\textbf{Attacks} & \textbf{Class label} & \multicolumn{4}{c}{\textbf{F1-score}} \\
+\cmidrule(lr){3-6}
+ & & \textbf{RF} & \textbf{XGB} & \textbf{Cat} & \textbf{LGB} \\
+\midrule
+\textbf{Benign} & Benign & 0.9901 & 0.9882 & 0.9786 & 0.9882 \\
+\midrule
+\textbf{Botnets} & Bot & 0.6191 & 0.6241 & 0.6043 & 0.6020 \\
+\midrule
+\multirow{3}{*}{\textbf{DDoS}} & HOIC & 0.8143 & 0.7968 & 0.8179 & 0.8134 \\
+ & LOIC-UDP & 0.2339 & 0.2875 & 0.2435 & 0.1966 \\
+ & LOIC-HTTP & 0.3727 & 0.3436 & 0.3867 & 0.4325 \\
+\midrule
+\multirow{4}{*}{\textbf{DoS}} & GoldenEye & 0.3809 & 0.3400 & 0.4023 & 0.4050 \\
+ & Hulk & 0.5751 & 0.5570 & 0.4978 & 0.4437 \\
+ & SlowHTTPTest & 0.4112 & 0.4456 & 0.3698 & 0.3413 \\
+ & Slowloris & 0.0857 & 0.0819 & 0.0846 & 0.0829 \\
+\midrule
+\multirow{2}{*}{\textbf{BruteForce}} & FTP-BruteForce & 0.9480 & 0.9533 & 0.9466 & 0.9469 \\
+ & SSH-Bruteforce & 0.2857 & 0.2182 & 0.0814 & 0.0669 \\
+\midrule
+\multirow{2}{*}{\textbf{Infiltration}} & Infilteration & 0.9961 & 0.9961 & 0.9960 & 0.9961 \\
+ & Infiltration & 0.4335 & 0.4065 & 0.4192 & 0.3835 \\
+\midrule
+\multirow{6}{*}{\textbf{Web Attack}} & Brute Force -Web & 0.2714 & 0.2988 & 0.2364 & 0.2121 \\
+ & Brute Force -XSS & 0.5575 & 0.5030 & 0.5752 & 0.5869 \\
+ & Brute Force-Web & 0.9919 & 0.9927 & 0.9886 & 0.9920 \\
+ & Brute Force-XSS & 0.4506 & 0.4749 & 0.4603 & 0.4511 \\
+ & SQL Injection & 0.4492 & 0.4296 & 0.4418 & 0.4405 \\
+ & Web attack-SQL Injection & 0.0000 & 0.0000 & 0.0571 & 0.0000 \\
+\midrule
+\multicolumn{2}{c}{\textbf{Accuracy}} & 0.6844 & 0.6820 & 0.6772 & 0.6728 \\
+\midrule
+\multicolumn{2}{c}{\textbf{Weighted precision}} & 0.7202 & 0.7062 & 0.7238 & 0.7258 \\
+\midrule
+\multicolumn{2}{c}{\textbf{Weighted recall}} & 0.6844 & 0.6820 & 0.6772 & 0.6728 \\
+\midrule
+\multicolumn{2}{c}{\textbf{Weighted F1}} & 0.6944 & 0.6910 & 0.6862 & 0.6777 \\
+\bottomrule
+\end{tabular}
+\end{table}

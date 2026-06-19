@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1335" viewBox="0 0 1120 1335">
+<style>text{font-family:Arial,DejaVu Sans,sans-serif;fill:#1f2933}.small{font-size:12px}.label{font-size:13px}.title{font-size:22px;font-weight:700}.axis{stroke:#7b8794;stroke-width:1}.grid{stroke:#d9e2ec;stroke-width:1}</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text class="title" x="270" y="36" text-anchor="middle">Label distribution (log-scaled bars)</text>
+<text class="small" x="270" y="58" text-anchor="middle">Total rows: 6,264,391 | Classes: 45</text>
+<line class="grid" x1="270" y1="81" x2="870" y2="81"/>
+<text class="label" x="18" y="86">TFTP</text>
+<rect x="270" y="72" width="600.00" height="18" fill="#d64545" rx="3"/>
+<text class="small" x="878.0" y="86">1,405,780 (22.4408%)</text>
+<line class="grid" x1="270" y1="108" x2="870" y2="108"/>
+<text class="label" x="18" y="113">Benign</text>
+<rect x="270" y="99" width="590.04" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="868.038202686173" y="113">1,111,331 (17.7404%)</text>
+<line class="grid" x1="270" y1="135" x2="870" y2="135"/>
+<text class="label" x="18" y="140">Syn</text>
+<rect x="270" y="126" width="552.04" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="830.0364331034859" y="140">453,374 (7.2373%)</text>
+<line class="grid" x1="270" y1="162" x2="870" y2="162"/>
+<text class="label" x="18" y="167">MSSQL</text>
+<rect x="270" y="153" width="547.30" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="825.2984274539529" y="167">405,423 (6.4719%)</text>
+<line class="grid" x1="270" y1="189" x2="870" y2="189"/>
+<text class="label" x="18" y="194">DrDoS_SNMP</text>
+<rect x="270" y="180" width="542.40" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="820.396489882871" y="194">361,144 (5.7650%)</text>
+<line class="grid" x1="270" y1="216" x2="870" y2="216"/>
+<text class="label" x="18" y="221">DrDoS_DNS</text>
+<rect x="270" y="207" width="541.66" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="819.6562005029182" y="221">354,891 (5.6652%)</text>
+<line class="grid" x1="270" y1="243" x2="870" y2="243"/>
+<text class="label" x="18" y="248">DrDoS_MSSQL</text>
+<rect x="270" y="234" width="536.72" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="814.7191308923223" y="248">315,869 (5.0423%)</text>
+<line class="grid" x1="270" y1="270" x2="870" y2="270"/>
+<text class="label" x="18" y="275">DrDoS_NetBIOS</text>
+<rect x="270" y="261" width="532.60" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="810.5954507976757" y="275">286,585 (4.5748%)</text>
+<line class="grid" x1="270" y1="297" x2="870" y2="297"/>
+<text class="label" x="18" y="302">UDP</text>
+<rect x="270" y="288" width="530.17" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="808.1685022066258" y="302">270,636 (4.3202%)</text>
+<line class="grid" x1="270" y1="324" x2="870" y2="324"/>
+<text class="label" x="18" y="329">NetBIOS</text>
+<rect x="270" y="315" width="527.81" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="805.8052562613352" y="329">255,959 (4.0859%)</text>
+<line class="grid" x1="270" y1="351" x2="870" y2="351"/>
+<text class="label" x="18" y="356">DrDoS_UDP</text>
+<rect x="270" y="342" width="521.26" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="799.2638664667605" y="356">219,353 (3.5016%)</text>
+<line class="grid" x1="270" y1="378" x2="870" y2="378"/>
+<text class="label" x="18" y="383">DrDoS_SSDP</text>
+<rect x="270" y="369" width="513.49" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="791.4870655424078" y="383">182,582 (2.9146%)</text>
+<line class="grid" x1="270" y1="405" x2="870" y2="405"/>
+<text class="label" x="18" y="410">DrDoS_LDAP</text>
+<rect x="270" y="396" width="505.93" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="783.9275090731614" y="410">152,756 (2.4385%)</text>
+<line class="grid" x1="270" y1="432" x2="870" y2="432"/>
+<text class="label" x="18" y="437">LDAP</text>
+<rect x="270" y="423" width="500.25" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="778.2458372096496" y="437">133,592 (2.1326%)</text>
+<line class="grid" x1="270" y1="459" x2="870" y2="459"/>
+<text class="label" x="18" y="464">DrDoS_NTP</text>
+<rect x="270" y="450" width="480.63" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="758.6250948121592" y="464">84,088 (1.3423%)</text>
+<line class="grid" x1="270" y1="486" x2="870" y2="486"/>
+<text class="label" x="18" y="491">DDOS attack-HOIC</text>
+<rect x="270" y="477" width="456.95" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="734.9502414140434" y="491">48,100 (0.7678%)</text>
+<line class="grid" x1="270" y1="513" x2="870" y2="513"/>
+<text class="label" x="18" y="518">DDoS attacks-LOIC-HTTP</text>
+<rect x="270" y="504" width="449.38" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="727.3797085396757" y="518">40,232 (0.6422%)</text>
+<line class="grid" x1="270" y1="540" x2="870" y2="540"/>
+<text class="label" x="18" y="545">DoS attacks-Hulk</text>
+<rect x="270" y="531" width="439.85" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="717.8462163295537" y="545">32,128 (0.5129%)</text>
+<line class="grid" x1="270" y1="567" x2="870" y2="567"/>
+<text class="label" x="18" y="572">UDP-lag</text>
+<rect x="270" y="558" width="430.67" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="708.6674577548731" y="572">25,872 (0.4130%)</text>
+<line class="grid" x1="270" y1="594" x2="870" y2="594"/>
+<text class="label" x="18" y="599">Bot</text>
+<rect x="270" y="585" width="419.98" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="697.9767442190634" y="599">20,104 (0.3209%)</text>
+<line class="grid" x1="270" y1="621" x2="870" y2="621"/>
+<text class="label" x="18" y="626">DoS Hulk</text>
+<rect x="270" y="612" width="411.77" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="689.7678538194899" y="626">16,564 (0.2644%)</text>
+<line class="grid" x1="270" y1="648" x2="870" y2="648"/>
+<text class="label" x="18" y="653">FTP-BruteForce</text>
+<rect x="270" y="639" width="403.32" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="681.3182036081275" y="653">13,570 (0.2166%)</text>
+<line class="grid" x1="270" y1="675" x2="870" y2="675"/>
+<text class="label" x="18" y="680">SSH-Bruteforce</text>
+<rect x="270" y="666" width="402.68" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="680.6762396654551" y="680">13,366 (0.2134%)</text>
+<line class="grid" x1="270" y1="702" x2="870" y2="702"/>
+<text class="label" x="18" y="707">Portmap</text>
+<rect x="270" y="693" width="401.46" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="679.4571275592239" y="707">12,987 (0.2073%)</text>
+<line class="grid" x1="270" y1="729" x2="870" y2="729"/>
+<text class="label" x="18" y="734">Infilteration</text>
+<rect x="270" y="720" width="395.73" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="673.7284073111862" y="734">11,345 (0.1811%)</text>
+<line class="grid" x1="270" y1="756" x2="870" y2="756"/>
+<text class="label" x="18" y="761">PortScan</text>
+<rect x="270" y="747" width="394.76" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="672.7611302317538" y="761">11,089 (0.1770%)</text>
+<line class="grid" x1="270" y1="783" x2="870" y2="783"/>
+<text class="label" x="18" y="788">DoS attacks-SlowHTTPTest</text>
+<rect x="270" y="774" width="390.21" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="668.2062018573406" y="788">9,959 (0.1590%)</text>
+<line class="grid" x1="270" y1="810" x2="870" y2="810"/>
+<text class="label" x="18" y="815">DDoS</text>
+<rect x="270" y="801" width="386.02" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="664.0232975872924" y="815">9,023 (0.1440%)</text>
+<line class="grid" x1="270" y1="837" x2="870" y2="837"/>
+<text class="label" x="18" y="842">DoS attacks-GoldenEye</text>
+<rect x="270" y="828" width="338.13" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="616.1280048447167" y="842">2,914 (0.0465%)</text>
+<line class="grid" x1="270" y1="864" x2="870" y2="864"/>
+<text class="label" x="18" y="869">DoS attacks-Slowloris</text>
+<rect x="270" y="855" width="280.70" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="558.7016614720287" y="869">751 (0.0120%)</text>
+<line class="grid" x1="270" y1="891" x2="870" y2="891"/>
+<text class="label" x="18" y="896">DoS GoldenEye</text>
+<rect x="270" y="882" width="279.03" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="557.0348001818224" y="896">722 (0.0115%)</text>
+<line class="grid" x1="270" y1="918" x2="870" y2="918"/>
+<text class="label" x="18" y="923">FTP-Patator</text>
+<rect x="270" y="909" width="269.77" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="547.7670607604905" y="923">580 (0.0093%)</text>
+<line class="grid" x1="270" y1="945" x2="870" y2="945"/>
+<text class="label" x="18" y="950">DoS Slowhttptest</text>
+<rect x="270" y="936" width="255.91" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="533.9124078134787" y="950">418 (0.0067%)</text>
+<line class="grid" x1="270" y1="972" x2="870" y2="972"/>
+<text class="label" x="18" y="977">SSH-Patator</text>
+<rect x="270" y="963" width="255.30" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="533.3010816721533" y="977">412 (0.0066%)</text>
+<line class="grid" x1="270" y1="999" x2="870" y2="999"/>
+<text class="label" x="18" y="1004">DoS slowloris</text>
+<rect x="270" y="990" width="252.98" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="530.9809503165176" y="1004">390 (0.0062%)</text>
+<line class="grid" x1="270" y1="1026" x2="870" y2="1026"/>
+<text class="label" x="18" y="1031">UDPLag</text>
+<rect x="270" y="1017" width="208.22" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="486.220638903883" y="1031">135 (0.0022%)</text>
+<line class="grid" x1="270" y1="1053" x2="870" y2="1053"/>
+<text class="label" x="18" y="1058">DDOS attack-LOIC-UDP</text>
+<rect x="270" y="1044" width="203.27" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="481.26739709576395" y="1058">120 (0.0019%)</text>
+<line class="grid" x1="270" y1="1080" x2="870" y2="1080"/>
+<text class="label" x="18" y="1085">Web Attack � Brute Force</text>
+<rect x="270" y="1071" width="200.37" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="478.3681786841487" y="1085">112 (0.0018%)</text>
+<line class="grid" x1="270" y1="1107" x2="870" y2="1107"/>
+<text class="label" x="18" y="1112">Web Attack � XSS</text>
+<rect x="270" y="1098" width="159.42" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="437.4167531305699" y="1112">42 (0.0007%)</text>
+<line class="grid" x1="270" y1="1134" x2="870" y2="1134"/>
+<text class="label" x="18" y="1139">Brute Force -Web</text>
+<rect x="270" y="1125" width="150.69" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="428.69180760864515" y="1139">34 (0.0005%)</text>
+<line class="grid" x1="270" y1="1161" x2="870" y2="1161"/>
+<text class="label" x="18" y="1166">WebDDoS</text>
+<rect x="270" y="1152" width="149.46" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="427.46318406630684" y="1166">33 (0.0005%)</text>
+<line class="grid" x1="270" y1="1188" x2="870" y2="1188"/>
+<text class="label" x="18" y="1193">Brute Force -XSS</text>
+<rect x="270" y="1179" width="117.51" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="395.5149096751523" y="1193">15 (0.0002%)</text>
+<line class="grid" x1="270" y1="1215" x2="870" y2="1215"/>
+<text class="label" x="18" y="1220">SQL Injection</text>
+<rect x="270" y="1206" width="97.59" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="375.5940200045098" y="1220">9 (0.0001%)</text>
+<line class="grid" x1="270" y1="1242" x2="870" y2="1242"/>
+<text class="label" x="18" y="1247">Infiltration</text>
+<rect x="270" y="1233" width="29.38" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="307.37872741878806" y="1247">1 (0.0000%)</text>
+<line class="grid" x1="270" y1="1269" x2="870" y2="1269"/>
+<text class="label" x="18" y="1274">Web Attack � Sql Injection</text>
+<rect x="270" y="1260" width="29.38" height="18" fill="#2f80ed" rx="3"/>
+<text class="small" x="307.37872741878806" y="1274">1 (0.0000%)</text>
+</svg>

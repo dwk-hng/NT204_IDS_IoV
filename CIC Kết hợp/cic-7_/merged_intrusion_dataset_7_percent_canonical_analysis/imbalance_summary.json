@@ -1,0 +1,179 @@
+{
+  "total_rows": 6264391,
+  "class_count": 45,
+  "majority_label": "TFTP",
+  "majority_count": 1405780,
+  "majority_percentage": 22.44080869153921,
+  "minority_label": "Infiltration",
+  "minority_count": 1,
+  "minority_percentage": 1.5963243673646808e-05,
+  "imbalance_ratio_majority_to_minority": 1405780.0,
+  "median_class_count": 13366.0,
+  "labels_below_1_percent": [
+    "DDOS attack-HOIC",
+    "DDoS attacks-LOIC-HTTP",
+    "DoS attacks-Hulk",
+    "UDP-lag",
+    "Bot",
+    "DoS Hulk",
+    "FTP-BruteForce",
+    "SSH-Bruteforce",
+    "Portmap",
+    "Infilteration",
+    "PortScan",
+    "DoS attacks-SlowHTTPTest",
+    "DDoS",
+    "DoS attacks-GoldenEye",
+    "DoS attacks-Slowloris",
+    "DoS GoldenEye",
+    "FTP-Patator",
+    "DoS Slowhttptest",
+    "SSH-Patator",
+    "DoS slowloris",
+    "UDPLag",
+    "DDOS attack-LOIC-UDP",
+    "Web Attack � Brute Force",
+    "Web Attack � XSS",
+    "Brute Force -Web",
+    "WebDDoS",
+    "Brute Force -XSS",
+    "SQL Injection",
+    "Infiltration",
+    "Web Attack � Sql Injection"
+  ],
+  "labels_below_0_1_percent": [
+    "DoS attacks-GoldenEye",
+    "DoS attacks-Slowloris",
+    "DoS GoldenEye",
+    "FTP-Patator",
+    "DoS Slowhttptest",
+    "SSH-Patator",
+    "DoS slowloris",
+    "UDPLag",
+    "DDOS attack-LOIC-UDP",
+    "Web Attack � Brute Force",
+    "Web Attack � XSS",
+    "Brute Force -Web",
+    "WebDDoS",
+    "Brute Force -XSS",
+    "SQL Injection",
+    "Infiltration",
+    "Web Attack � Sql Injection"
+  ],
+  "labels_below_one_tenth_median": [
+    "DoS attacks-Slowloris",
+    "DoS GoldenEye",
+    "FTP-Patator",
+    "DoS Slowhttptest",
+    "SSH-Patator",
+    "DoS slowloris",
+    "UDPLag",
+    "DDOS attack-LOIC-UDP",
+    "Web Attack � Brute Force",
+    "Web Attack � XSS",
+    "Brute Force -Web",
+    "WebDDoS",
+    "Brute Force -XSS",
+    "SQL Injection",
+    "Infiltration",
+    "Web Attack � Sql Injection"
+  ],
+  "top_3_labels": [
+    {
+      "label": "TFTP",
+      "count": 1405780,
+      "percentage": 22.44080869153921,
+      "cumulative_percentage": 22.44080869153921,
+      "ratio_to_majority": 1.0
+    },
+    {
+      "label": "Benign",
+      "count": 1111331,
+      "percentage": 17.74044755507758,
+      "cumulative_percentage": 40.18125624661679,
+      "ratio_to_majority": 1.2649516660652858
+    },
+    {
+      "label": "Syn",
+      "count": 453374,
+      "percentage": 7.237319637295949,
+      "cumulative_percentage": 47.41857588391274,
+      "ratio_to_majority": 3.100707142447516
+    }
+  ],
+  "bottom_10_labels": [
+    {
+      "label": "Infiltration",
+      "count": 1,
+      "percentage": 1.5963243673646808e-05,
+      "cumulative_percentage": 99.9999840367563,
+      "ratio_to_majority": 1405780.0
+    },
+    {
+      "label": "Web Attack � Sql Injection",
+      "count": 1,
+      "percentage": 1.5963243673646808e-05,
+      "cumulative_percentage": 99.99999999999997,
+      "ratio_to_majority": 1405780.0
+    },
+    {
+      "label": "SQL Injection",
+      "count": 9,
+      "percentage": 0.00014366919306282126,
+      "cumulative_percentage": 99.99996807351263,
+      "ratio_to_majority": 156197.77777777778
+    },
+    {
+      "label": "Brute Force -XSS",
+      "count": 15,
+      "percentage": 0.0002394486551047021,
+      "cumulative_percentage": 99.99982440431957,
+      "ratio_to_majority": 93718.66666666667
+    },
+    {
+      "label": "WebDDoS",
+      "count": 33,
+      "percentage": 0.0005267870412303447,
+      "cumulative_percentage": 99.99958495566446,
+      "ratio_to_majority": 42599.393939393936
+    },
+    {
+      "label": "Brute Force -Web",
+      "count": 34,
+      "percentage": 0.0005427502849039915,
+      "cumulative_percentage": 99.99905816862324,
+      "ratio_to_majority": 41346.470588235294
+    },
+    {
+      "label": "Web Attack � XSS",
+      "count": 42,
+      "percentage": 0.000670456234293166,
+      "cumulative_percentage": 99.99851541833833,
+      "ratio_to_majority": 33470.95238095238
+    },
+    {
+      "label": "Web Attack � Brute Force",
+      "count": 112,
+      "percentage": 0.0017878832914484423,
+      "cumulative_percentage": 99.99784496210404,
+      "ratio_to_majority": 12551.607142857143
+    },
+    {
+      "label": "DDOS attack-LOIC-UDP",
+      "count": 120,
+      "percentage": 0.0019155892408376169,
+      "cumulative_percentage": 99.9960570788126,
+      "ratio_to_majority": 11714.833333333334
+    },
+    {
+      "label": "UDPLag",
+      "count": 135,
+      "percentage": 0.002155037895942319,
+      "cumulative_percentage": 99.99414148957176,
+      "ratio_to_majority": 10413.185185185184
+    }
+  ],
+  "normalized_entropy": 0.6803942621502823,
+  "effective_number_of_classes": 13.3301890446254,
+  "gini_impurity": 0.8905470970885658
+}
